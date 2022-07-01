@@ -111,7 +111,7 @@ jobs:
         chassis_model = chassis_client.create_model(process_fn=process)
 
         try:
-          results = chassis_model.test(model_info["sampleDataFilePath"])\
+          results = chassis_model.test(model_info["sampleDataFilePath"])
           print(results)
         except Exception as e:
           raise ValueError("Error testing model: {}".format(e))
