@@ -30,6 +30,8 @@ jobs:
         import numpy as np
         import time
         import io
+        import os
+        import requests
 
         import torch
         import torch.nn as nn
@@ -139,7 +141,6 @@ jobs:
         MODEL_VERSION = final_status["result"]["version"]
 
         # patch docs
-        import os, requests
         # MODEL_ID = os.getenv("MODEL_ID")
         # MODEL_VERSION = os.getenv("MODEL_VERSION")
 
