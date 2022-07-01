@@ -1,6 +1,37 @@
 {
-    "name": "GitHub Workflow Example Model",
-    "version": "0.0.4",
-    "weightsFilePath": "weights/model_latest.pkl",
-    "sampleDataFilePath": "data/digits_sample.json"
+    "name": "DRAFT - Underwater Seabed Classification",
+    "version": "0.0.2",
+    "weightsFilePath": "weights/balanced_model.pth",
+    "sampleDataFilePath": "data/21.jpg",
+    "technicalDetails": {
+        "inputs": [
+            {
+                "name": "input",
+                "acceptedMediaTypes": "image/jpeg",
+                "maximumSize": 5000000,
+                "description": "Side-scan sonar imagery of the ocean floor"
+            }
+        ],
+        "outputs": [
+            {
+                "name": "results.json",
+                "mediaType": "application/json",
+                "maximumSize": 1000000,
+                "description": "Top class predictions with corresponding softmax probability in JSON format"
+            }
+        ],
+        "statistics": [
+            {
+                "label": "Accuracy",
+                "category": "numeric",
+                "type": "percentage",
+                "description": "The average of the classification accuracies across all classes.",
+                "order": 1,
+                "value": 0.959
+            }
+        ],
+        "longDescription": "In this demo, we have provided a baseline model for a basic computer vision task. Here we generate a classification model to distinguish if an underwater SAR/sonar image is a downed plane, sunken ship, or empty (i.e. no object detected on the seafloor). More advanced applications of this model would include labeled bounding boxes/object detection, retraining given a new set of images, adversarial robustness, and more complex file types (.h5 extensions specifically).",
+        "techDetails": "#OVERVIEW:\n This model is amazing. \n\n#BIAS:\n Due to unbalanced dataset, model experiences significant bias towards the empty seafloor and ship classes. \n\n#TRAINING:\n This model was trained on seabed images. \n\n#VALIDATION:\n This model was validated on a 10% subset of the entire dataset. \n\n#INPUT SPECIFICATION:\nThis model accepts png and jpg sonar images of the ocean floor. \n\n#OUTPUT SPECIFICATION:\nThis model returns the class predictions with a corresponding softmax probability for each of the three classes included in the dataset: `plane`, `ship`, or `seabed`.",
+        "performanceSummary": "This model was trained and validated on selected examples from the [SeabedObjects](add link) dataset, which includes images of sunken planes, sunken ships, and the open seafloor. The validation set is a 20% split of the entire dataset. During validation, the model achieved a 90.0% accuracy for the `plane` class, 100% accuracy for the `empty seafloor` class, 98.5% accuracy on the `ship` class, and an overall accuracy of 98.5%. The macro average accuracy resulting from this validation yields 95.9%. The model was then tested on a smaller test set separate from the training and validation set, achieving 62.5% accuracy for planes, 98.0% accuracy for empty seafloor, 88.4% accuracy for ships, an overall accuracy of 92%, and a macro average accuracy of 83%."
+    }
 }
