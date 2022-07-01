@@ -38,6 +38,7 @@ numpy==1.22.3
 oauthlib==3.2.0
 packaging==21.3
 pandas==1.4.2
+Pillow>=9.2.0
 prometheus-client==0.14.1
 prometheus-flask-exporter==0.20.1
 protobuf==3.20.0
