@@ -1,6 +1,6 @@
 {
     "name": "DRAFT - Underwater Seabed Classification",
-    "version": "0.0.3",
+    "version": "0.0.2",
     "weightsFilePath": "weights/balanced_model.pth",
     "sampleDataFilePath": "data/21.jpg",
     "technicalDetails": {
