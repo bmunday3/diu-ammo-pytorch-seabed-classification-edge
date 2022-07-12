@@ -1,7 +1,7 @@
 {
     "name": "Seabed Classification (Unbalanced)",
-    "version": "0.0.1",
-    "weightsFilePath": "weights/balanced_model.pth",
+    "version": "0.0.2",
+    "weightsFilePath": "weights/unbalanced_model.pth",
     "sampleDataFilePath": "data/21.jpg",
     "technicalDetails": {
         "inputs": [
