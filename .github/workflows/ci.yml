@@ -123,7 +123,7 @@ jobs:
           registry_user=chassis_creds["dockerhub_user"],
           registry_pass=chassis_creds["dockerhub_pass"],
           modzy_url=chassis_creds["modzy_url"],
-          model_version="pxzcjlt8ou",
+          modzy_model_id="pxzcjlt8ou",
           modzy_api_key=chassis_creds["modzy_api_key"],
           modzy_sample_input_path=model_info["sampleDataFilePath"]
         )
