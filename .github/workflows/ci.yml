@@ -123,7 +123,6 @@ jobs:
           registry_user=chassis_creds["dockerhub_user"],
           registry_pass=chassis_creds["dockerhub_pass"],
           modzy_url=chassis_creds["modzy_url"],
-          modzy_model_id="pxzcjlt8ou",
           modzy_api_key=chassis_creds["modzy_api_key"],
           modzy_sample_input_path=model_info["sampleDataFilePath"]
         )
@@ -174,54 +173,7 @@ jobs:
 
         response = requests.patch(url, json=payload, headers=headers)
         print(response.text)        
-      shell: python
-  # add-docs:
-  #   name: Add Custom Documentation to Newly Deployed Model
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - uses: actions/checkout@v2
-  #   - uses: actions/setup-python@v2
-  #     with:
-  #       python-version: '3.9'
-  #       cache: 'pip'
-  #   - run: pip install -r requirements.txt
-  #   - name: Invoke Chassis Service
-  #     env: 
-  #       MODZY_URL: ${{ secrets.MODZY_URL }}
-  #       MODZY_API_KEY: ${{ secrets.MODZY_API_KEY }}
-  #     run: |
-  #       import os, requests
-  #       MODEL_ID = os.getenv("MODEL_ID")
-  #       MODEL_VERSION = os.getenv("MODEL_VERSION")
-
-  #       # load model info file to be accessed in tech documentation patching
-  #       with open("model_info.json", "r") as model_file:
-  #           model_info = json.load(model_file)
-
-  #       # assign corrrect URL to patch model
-  #       url = "{}/api/models/{}/versions/{}".format(os.getenv("MODZY_URL"), MODEL_ID, MODEL_VERSION)
-
-  #       payload = {
-  #           "inputs": model_info["technicalDetails"]["inputs"],
-  #           "outputs": model_info["technicalDetails"]["outputs"],    
-  #           "statistics": model_info["technicalDetails"]["statistics"],
-  #           "processing": {
-  #               "minimumParallelCapacity": 0,
-  #               "maximumParallelCapacity": 1
-  #           },
-  #           "longDescription": model_info["technicalDetails"]["longDescription"],
-  #           "technicalDetails": model_info["technicalDetails"]["techDetails"],
-  #           "performanceSummary": model_info["technicalDetails"]["performanceSummary"]
-  #       }
-
-  #       headers = {
-  #           "Accept": "application/json",
-  #           "Content-Type": "application/json",
-  #           "Authorization": "ApiKey {}".format(os.getenv("MODZY_API_KEY"))
-  #       }
-
-  #       response = requests.patch(url, json=payload, headers=headers)   
-  #     shell: python          
+      shell: python         
 
             
           
