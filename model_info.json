@@ -1,7 +1,7 @@
 {
     "name": "Seabed Classification (Unbalanced)",
     "version": "0.0.9",
-    "weightsFilePath": "weights/mlflow_experiment_id-20_lr-0.1_opt-sgd_arch-ResNet50.pth",
+    "weightsFilePath": "weights/unbalanced_model.pth",
     "sampleDataFilePath": "data/21.jpg",
     "technicalDetails": {
         "inputs": [
